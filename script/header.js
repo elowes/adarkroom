@@ -4,6 +4,7 @@
 var Header = {
 	
 	init: function(options) {
+    console.log(options)
 		this.options = $.extend(
 			this.options,
 			options

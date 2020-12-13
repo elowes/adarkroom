@@ -87,14 +87,14 @@
 			this._log = this.options.log;
 
 			// Check for HTML5 support
-			if(!Engine.browserValid()) {
-				window.location = 'browserWarning.html';
-			}
+			// if(!Engine.browserValid()) {
+			// 	window.location = 'browserWarning.html';
+			// }
 
 			// Check for mobile
-			if(Engine.isMobile()) {
-				window.location = 'mobileWarning.html';
-			}
+			// if(Engine.isMobile()) {
+			// 	window.location = 'mobileWarning.html';
+			// }
 
 			Engine.disableSelection();
 
@@ -117,7 +117,7 @@
 
 			var menu = $('<div>')
 				.addClass('menu')
-				.appendTo('body');
+				// .appendTo('body');
 
 			if(typeof langs != 'undefined'){
 				var customSelect = $('<span>')

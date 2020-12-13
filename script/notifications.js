@@ -4,11 +4,12 @@
 var Notifications = {
 	
 	init: function(options) {
+    console.log(options)
 		this.options = $.extend(
 			this.options,
 			options
 		);
-		
+		M.notifications.init();
 		// Create the notifications box
 		elem = $('<div>').attr({
 			id: 'notifications',
@@ -28,6 +29,7 @@ var Notifications = {
 	
 	// Allow notification to the player
 	notify: function(module, text, noQueue) {
+    console.log(text, noQueue)
 		if(typeof text == 'undefined') return;
 		if(text.slice(-1) != ".") text += ".";
 		if(module != null && Engine.activeModule != module) {
@@ -61,6 +63,7 @@ var Notifications = {
 	},
 	
 	printMessage: function(t) {
+    M.notifications.printMessage(t)
 		var text = $('<div>').addClass('notification').css('opacity', '0').text(t).prependTo('div#notifications');
 		text.animate({opacity: 1}, 500, 'linear', function() {
 			// Do this every time we add a new message, this way we never have a large backlog to iterate through. Keeps things faster.
